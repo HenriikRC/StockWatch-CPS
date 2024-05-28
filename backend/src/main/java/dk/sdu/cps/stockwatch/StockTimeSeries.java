@@ -1,5 +1,6 @@
 package dk.sdu.cps.stockwatch;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class StockTimeSeries {
     @JsonProperty("5. volume")
     private long volume;
     @ManyToOne
+    @JsonIgnore
     private Stock stock;
     private Timestamp timeStamp;
 }

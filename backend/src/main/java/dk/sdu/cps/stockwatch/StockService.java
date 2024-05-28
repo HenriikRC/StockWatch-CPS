@@ -1,6 +1,11 @@
 package dk.sdu.cps.stockwatch;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StockService {
@@ -17,4 +22,12 @@ public class StockService {
             stock.setName(name);
             return stockRepository.save(stock);
         }
+
+    public Optional<Stock> getStock(Long stockId) {
+        return stockRepository.findById(stockId);
+    }
+
+    public List<Stock> getStocks() {
+        return stockRepository.findAll();
+    }
 }
