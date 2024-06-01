@@ -1,4 +1,4 @@
-package dk.sdu.cps.stockwatch;
+package dk.sdu.cps.stockwatch.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

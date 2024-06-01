@@ -1,4 +1,4 @@
-package dk.sdu.cps.stockwatch;
+package dk.sdu.cps.stockwatch.api;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;

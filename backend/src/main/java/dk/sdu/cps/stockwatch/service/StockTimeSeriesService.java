@@ -1,5 +1,8 @@
-package dk.sdu.cps.stockwatch;
+package dk.sdu.cps.stockwatch.service;
 
+import dk.sdu.cps.stockwatch.model.Stock;
+import dk.sdu.cps.stockwatch.model.StockTimeSeries;
+import dk.sdu.cps.stockwatch.repository.StockTimeSeriesRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 

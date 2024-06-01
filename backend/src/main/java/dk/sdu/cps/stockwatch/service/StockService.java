@@ -1,7 +1,7 @@
-package dk.sdu.cps.stockwatch;
+package dk.sdu.cps.stockwatch.service;
 
-import lombok.Getter;
-import lombok.Setter;
+import dk.sdu.cps.stockwatch.model.Stock;
+import dk.sdu.cps.stockwatch.repository.StockRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,9 +1,11 @@
-package dk.sdu.cps.stockwatch;
+package dk.sdu.cps.stockwatch.controller;
 
+import dk.sdu.cps.stockwatch.model.Stock;
+import dk.sdu.cps.stockwatch.service.StockService;
+import dk.sdu.cps.stockwatch.model.StockTimeSeries;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 

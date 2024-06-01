@@ -1,5 +1,6 @@
-package dk.sdu.cps.stockwatch;
+package dk.sdu.cps.stockwatch.repository;
 
+import dk.sdu.cps.stockwatch.model.StockTimeSeries;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
