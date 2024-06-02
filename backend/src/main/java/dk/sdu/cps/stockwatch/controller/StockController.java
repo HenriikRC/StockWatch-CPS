@@ -45,4 +45,5 @@ public class StockController {
         }
         return ResponseEntity.badRequest().build();
     }
+    
 }

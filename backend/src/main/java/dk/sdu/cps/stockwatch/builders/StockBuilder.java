@@ -2,6 +2,7 @@ package dk.sdu.cps.stockwatch.builders;
 
 import dk.sdu.cps.stockwatch.model.Stock;
 import dk.sdu.cps.stockwatch.model.StockTimeSeries;
+import dk.sdu.cps.stockwatch.service.StockService;
 
 import java.sql.Timestamp;
 
@@ -13,6 +14,7 @@ public class StockBuilder implements Builder{
     private long volume;
     private Stock stock;
     private Timestamp timestamp;
+    private StockService stockService;
 
     public StockBuilder() {
         this.open = 100;
@@ -20,7 +22,7 @@ public class StockBuilder implements Builder{
         this.low = 100;
         this.close = 100;
         this.volume = 100;
-        this.stock = new Stock();
+        Stock stock = new Stock();
         stock.setSymbol("AAPL");
         stock.setName("Apple Inc.");
         this.timestamp = new Timestamp(System.currentTimeMillis());

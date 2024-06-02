@@ -2,19 +2,23 @@ package dk.sdu.cps.stockwatch.service;
 
 import dk.sdu.cps.stockwatch.model.Stock;
 import dk.sdu.cps.stockwatch.repository.StockRepository;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Getter
 public class StockService {
-
+        private Stock stock;
         private final StockRepository stockRepository;
 
         public StockService(StockRepository stockRepository) {
             this.stockRepository = stockRepository;
-
+            stock = this.create("AAPL", "Apple Inc.");
+            stock = this.create("IBM", "IBM");
         }
 
         public Stock create(String symbol, String name) {
@@ -31,4 +35,6 @@ public class StockService {
     public List<Stock> getStocks() {
         return stockRepository.findAll();
     }
+
+
 }
