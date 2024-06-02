@@ -1,4 +1,4 @@
-package dk.sdu.cps.stockwatch.api;
+package dk.sdu.cps.stockwatch.service;
 
 import dk.sdu.cps.stockwatch.model.StockResponse;
 import dk.sdu.cps.stockwatch.model.StockTimeSeries;

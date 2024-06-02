@@ -14,6 +14,7 @@ public class StockService {
 
         public StockService(StockRepository stockRepository) {
             this.stockRepository = stockRepository;
+
         }
 
         public Stock create(String symbol, String name) {
