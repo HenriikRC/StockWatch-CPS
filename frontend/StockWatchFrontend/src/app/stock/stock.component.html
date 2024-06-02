@@ -1,10 +1,8 @@
 <div>
-    <h1>{{stock?.name}}</h1>
-</div>
-<div>
     <table>
         <thead>
             <tr>
+                <th>Symbol</th>
                 <th>Time</th>
                 <th>Open</th>
                 <th>High</th>
@@ -14,15 +12,18 @@
             </tr>
         </thead>
         <tbody>
-            @for (stockTimeSeries of stock?.stockTimeSeries; track $index) {
-                <tr>
-                    <td>{{stockTimeSeries.timestamp}}</td>
-                    <td>{{stockTimeSeries?.['1. open']}}</td>
-                    <td>{{stockTimeSeries?.['2. high']}}</td>
-                    <td>{{stockTimeSeries?.['3. low']}}</td>
-                    <td>{{stockTimeSeries?.['4. close']}}</td>
-                    <td>{{stockTimeSeries?.['5. volume']}}</td>
-                </tr>
+            @for (stock of stocks; track $index){
+                @for (stockTimeSeries of stock?.stockTimeSeries; track $index) {
+                    <tr>
+                        <td>{{stock.symbol}}</td>
+                        <td>{{stockTimeSeries.timestamp}}</td>
+                        <td>{{stockTimeSeries?.['1. open']}}</td>
+                        <td>{{stockTimeSeries?.['2. high']}}</td>
+                        <td>{{stockTimeSeries?.['3. low']}}</td>
+                        <td>{{stockTimeSeries?.['4. close']}}</td>
+                        <td>{{stockTimeSeries?.['5. volume']}}</td>
+                    </tr>
+                }
             }
         </tbody>
     </table>

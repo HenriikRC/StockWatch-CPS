@@ -13,9 +13,10 @@ export class StockComponent {
   
   stockService: StockServiceService = inject(StockServiceService);
   stock: Stock | null = null;
+  stocks: Stock[] = [];
   
   updateStocks() {
     this.stockService.updateStocks();
-    this.stockService.getStock(1).subscribe(stock => this.stock = stock)
+    this.stockService.getStocks().subscribe(stocks => this.stocks = stocks);
   }
 }
