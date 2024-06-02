@@ -23,7 +23,7 @@ public class StockTimeSeriesService {
 
     }
 
-    public StockTimeSeries create(double open, double high, double low, double close, long volume, Timestamp timestamp, Stock stock) {
+    public StockTimeSeries create(Double open, Double high, Double low, Double close, Double volume, Timestamp timestamp, Stock stock) {
         return stockTimeSeriesRepository.save(new StockBuilder()
                 .setOpen(open)
                 .setHigh(high)

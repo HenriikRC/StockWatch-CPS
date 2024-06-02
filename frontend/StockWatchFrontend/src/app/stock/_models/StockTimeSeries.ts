@@ -5,5 +5,5 @@ export interface StockTimeSeries {
     "3. low": number;
     "4. close": number;
     "5. volume": number;
-    timestamp: Date;
+    timeStamp: Date;
 }

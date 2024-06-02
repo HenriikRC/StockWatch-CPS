@@ -7,48 +7,48 @@ import dk.sdu.cps.stockwatch.service.StockService;
 import java.sql.Timestamp;
 
 public class StockBuilder implements Builder{
-    private double open;
-    private double high;
-    private double low;
-    private double close;
-    private long volume;
+    private Double open;
+    private Double high;
+    private Double low;
+    private Double close;
+    private Double volume;
     private Stock stock;
     private Timestamp timestamp;
     private StockService stockService;
 
     public StockBuilder() {
-        this.open = 100;
-        this.high = 100;
-        this.low = 100;
-        this.close = 100;
-        this.volume = 100;
+        this.open = 100.0;
+        this.high = 100.0;
+        this.low = 100.0;
+        this.close = 100.0;
+        this.volume = 100.0;
         Stock stock = new Stock();
         stock.setSymbol("AAPL");
         stock.setName("Apple Inc.");
         this.timestamp = new Timestamp(System.currentTimeMillis());
     }
 
-    public StockBuilder setOpen(double open) {
+    public StockBuilder setOpen(Double open) {
         this.open = open;
         return this;
     }
 
-    public StockBuilder setHigh(double high) {
+    public StockBuilder setHigh(Double high) {
         this.high = high;
         return this;
     }
 
-    public StockBuilder setLow(double low) {
+    public StockBuilder setLow(Double low) {
         this.low = low;
         return this;
     }
 
-    public StockBuilder setClose(double close) {
+    public StockBuilder setClose(Double close) {
         this.close = close;
         return this;
     }
 
-    public StockBuilder setVolume(long volume) {
+    public StockBuilder setVolume(Double volume) {
         this.volume = volume;
         return this;
     }

@@ -14,15 +14,15 @@ public class StockTimeSeries {
     @GeneratedValue
     private Long id;
     @JsonProperty("1. open")
-    private double open;
+    private Double open;
     @JsonProperty("2. high")
-    private double high;
+    private Double high;
     @JsonProperty("3. low")
-    private double low;
+    private Double low;
     @JsonProperty("4. close")
-    private double close;
+    private Double close;
     @JsonProperty("5. volume")
-    private long volume;
+    private Double volume;
     @ManyToOne
     @JsonIgnore
     private Stock stock;
