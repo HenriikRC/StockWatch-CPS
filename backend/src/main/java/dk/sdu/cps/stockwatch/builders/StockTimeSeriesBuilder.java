@@ -6,7 +6,7 @@ import dk.sdu.cps.stockwatch.service.StockService;
 
 import java.sql.Timestamp;
 
-public class StockBuilder implements Builder{
+public class StockTimeSeriesBuilder implements Builder{
     private Double open;
     private Double high;
     private Double low;
@@ -16,7 +16,7 @@ public class StockBuilder implements Builder{
     private Timestamp timestamp;
     private StockService stockService;
 
-    public StockBuilder() {
+    public StockTimeSeriesBuilder() {
         this.open = 100.0;
         this.high = 100.0;
         this.low = 100.0;
@@ -28,37 +28,37 @@ public class StockBuilder implements Builder{
         this.timestamp = new Timestamp(System.currentTimeMillis());
     }
 
-    public StockBuilder setOpen(Double open) {
+    public StockTimeSeriesBuilder setOpen(Double open) {
         this.open = open;
         return this;
     }
 
-    public StockBuilder setHigh(Double high) {
+    public StockTimeSeriesBuilder setHigh(Double high) {
         this.high = high;
         return this;
     }
 
-    public StockBuilder setLow(Double low) {
+    public StockTimeSeriesBuilder setLow(Double low) {
         this.low = low;
         return this;
     }
 
-    public StockBuilder setClose(Double close) {
+    public StockTimeSeriesBuilder setClose(Double close) {
         this.close = close;
         return this;
     }
 
-    public StockBuilder setVolume(Double volume) {
+    public StockTimeSeriesBuilder setVolume(Double volume) {
         this.volume = volume;
         return this;
     }
 
-    public StockBuilder setStock(Stock stock) {
+    public StockTimeSeriesBuilder setStock(Stock stock) {
         this.stock = stock;
         return this;
     }
 
-    public StockBuilder setTimeStamp(Timestamp timestamp) {
+    public StockTimeSeriesBuilder setTimeStamp(Timestamp timestamp) {
         this.timestamp = timestamp;
         return this;
     }

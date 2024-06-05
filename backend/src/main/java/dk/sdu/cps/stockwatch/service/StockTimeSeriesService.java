@@ -1,14 +1,12 @@
 package dk.sdu.cps.stockwatch.service;
 
-import dk.sdu.cps.stockwatch.builders.StockBuilder;
+import dk.sdu.cps.stockwatch.builders.StockTimeSeriesBuilder;
 import dk.sdu.cps.stockwatch.model.Stock;
 import dk.sdu.cps.stockwatch.model.StockTimeSeries;
 import dk.sdu.cps.stockwatch.repository.StockTimeSeriesRepository;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class StockTimeSeriesService {
@@ -21,17 +19,23 @@ public class StockTimeSeriesService {
         this.stockTimeSeriesRepository = stockTimeSeriesRepository;
         this.stockService = stockService;
 
+
     }
 
     public StockTimeSeries create(Double open, Double high, Double low, Double close, Double volume, Timestamp timestamp, Stock stock) {
-        return stockTimeSeriesRepository.save(new StockBuilder()
-                .setOpen(open)
-                .setHigh(high)
-                .setLow(low)
-                .setClose(close)
-                .setVolume(volume)
-                .setStock(stock)
-                .setTimeStamp(timestamp)
-                .build());
+        if (stockTimeSeriesRepository.findByStockIdAndTimeStamp(stock.getId(), timestamp).isEmpty()) {
+            return stockTimeSeriesRepository.save(new StockTimeSeriesBuilder()
+                    .setOpen(open)
+                    .setHigh(high)
+                    .setLow(low)
+                    .setClose(close)
+                    .setVolume(volume)
+                    .setStock(stock)
+                    .setTimeStamp(timestamp)
+                    .build());
+        }
+        else {
+            return stockTimeSeriesRepository.findByStockIdAndTimeStamp(stock.getId(), timestamp).get();
+        }
     }
 }

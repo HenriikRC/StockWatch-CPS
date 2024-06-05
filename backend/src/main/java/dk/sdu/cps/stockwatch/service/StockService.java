@@ -17,15 +17,20 @@ public class StockService {
 
         public StockService(StockRepository stockRepository) {
             this.stockRepository = stockRepository;
-            stock = this.create("AAPL", "Apple Inc.");
-            stock = this.create("IBM", "IBM");
+            if (stockRepository.findAll().isEmpty()) {
+                stock = this.create("AAPL", "Apple Inc.");
+                stock = this.create("IBM", "IBM");
+            }
         }
 
         public Stock create(String symbol, String name) {
             Stock stock = new Stock();
             stock.setSymbol(symbol);
             stock.setName(name);
-            return stockRepository.save(stock);
+            if (stockRepository.findBySymbol(symbol).isEmpty()) {
+                return stockRepository.save(stock);
+            }
+            return stockRepository.findBySymbol(symbol).get();
         }
 
     public Optional<Stock> getStock(Long stockId) {
