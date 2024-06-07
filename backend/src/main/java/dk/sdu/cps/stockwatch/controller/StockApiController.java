@@ -20,5 +20,4 @@ public class StockApiController {
     public void updateStocks() {
         stockApiService.getStockData();
     }
-
 }

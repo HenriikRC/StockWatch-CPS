@@ -40,6 +40,4 @@ public class StockService {
     public List<Stock> getStocks() {
         return stockRepository.findAll();
     }
-
-
 }

@@ -10,6 +10,6 @@ import java.util.Map;
 public class StockResponse {
     @JsonProperty("Meta Data")
     private StockMetaData metaData;
-    @JsonProperty("Time Series (1min)")
+    @JsonProperty("Time Series (5min)")
     private Map<Timestamp, StockTimeSeries> timeSeries;
 }

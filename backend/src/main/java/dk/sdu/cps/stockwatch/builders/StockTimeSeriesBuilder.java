@@ -17,11 +17,11 @@ public class StockTimeSeriesBuilder implements Builder{
     private StockService stockService;
 
     public StockTimeSeriesBuilder() {
-        this.open = 100.0;
-        this.high = 100.0;
-        this.low = 100.0;
-        this.close = 100.0;
-        this.volume = 100.0;
+        this.open = null;
+        this.high = null;
+        this.low = null;
+        this.close = null;
+        this.volume = null;
         Stock stock = new Stock();
         stock.setSymbol("AAPL");
         stock.setName("Apple Inc.");
